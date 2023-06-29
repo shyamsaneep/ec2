@@ -1,0 +1,19 @@
+# Author :- Sandeep Kaushik
+AWSTemplateFormatVersion: 2022-09-09
+Description: This template will create EC2 Instance
+Resources:
+  UbuntuInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: keyname
+      ImageId: imageid
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - sg-0b24d3d00fdd2f6c3
+      Tags:
+        - Key: Name
+          Value: Ubuntu Server
+Outputs:
+  outputUbuntuInstance:
+    Description: A reference to the created EC2 Instance
+    Value: !Ref UbuntuInstance
